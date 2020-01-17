@@ -12,7 +12,7 @@ jobs:
     - name: Environment Variables
       run: |
         OIIO_FAMILY=OpenImageIO
-        OIIO_VERSION=Release-2.0.10
+        OIIO_VERSION=Release-2.1.10.1
         OIIO_PACKAGE=$OIIO_FAMILY-$OIIO_VERSION
         echo ::set-env name=OIIO_FAMILY::$OIIO_FAMILY
         echo ::set-env name=OIIO_VERSION::$OIIO_VERSION
@@ -32,5 +32,5 @@ jobs:
         make PYTHON_VERSION=3.6
     - uses: actions/upload-artifact@master
       with:
-        name: OpenImageIO-Release-2.0.10
-        path: OpenImageIO-Release-2.0.10/dist
+        name: OpenImageIO-Release-2.1.10.1
+        path: OpenImageIO-Release-2.1.10.1/dist
