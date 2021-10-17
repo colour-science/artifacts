@@ -17,7 +17,7 @@ jobs:
     - name: Update & Install APT Package Dependencies
       run: |
         sudo apt-get update
-        sudo apt-get --yes install build-essential cmake libboost-all-dev libilmbase-dev libopenexr-dev libpng-dev libtiff5-dev
+        sudo apt-get --yes install build-essential cmake libboost-all-dev libilmbase-dev libopenexr-dev libpng-dev libtiff5-dev pybind11-dev
     - name: Download Source
       run: |
         wget https://github.com/OpenImageIO/oiio/archive/refs/tags/v$CI_OIIO_VERSION.tar.gz -O $CI_OIIO_PACKAGE.tar.gz
