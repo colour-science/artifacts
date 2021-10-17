@@ -20,7 +20,7 @@ jobs:
         sudo apt-get --yes install build-essential cmake libboost-all-dev libilmbase-dev libopenexr-dev libpng-dev libtiff5-dev
     - name: Download Source
       run: |
-        wget https://github.com/OpenImageIO/oiio/archive/$CI_OIIO_VERSION.tar.gz -O $CI_OIIO_PACKAGE.tar.gz
+        wget https://github.com/OpenImageIO/oiio/archive/refs/tags/v$CI_OIIO_VERSION.tar.gz -O $CI_OIIO_PACKAGE.tar.gz
         mkdir $CI_OIIO_PACKAGE
         tar -xvf $CI_OIIO_PACKAGE.tar.gz -C $CI_OIIO_PACKAGE --strip-components=1
     - name: Build Package
