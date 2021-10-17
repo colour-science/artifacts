@@ -5,14 +5,14 @@ on: [push]
 jobs:
   build:
 
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     steps:
     - uses: actions/checkout@v1
     - name: Environment Variables
       run: |
         OIIO_FAMILY=OpenImageIO
-        OIIO_VERSION=Release-2.1.10.1
+        OIIO_VERSION=Release-2.2.18.0
         OIIO_PACKAGE=$OIIO_FAMILY-$OIIO_VERSION
         echo ::set-env name=OIIO_FAMILY::$OIIO_FAMILY
         echo ::set-env name=OIIO_VERSION::$OIIO_VERSION
@@ -29,8 +29,8 @@ jobs:
     - name: Build Package
       run: |
         cd $OIIO_PACKAGE
-        make PYTHON_VERSION=3.6
+        make PYTHON_VERSION=3.8
     - uses: actions/upload-artifact@master
       with:
-        name: OpenImageIO-Release-2.1.10.1
-        path: OpenImageIO-Release-2.1.10.1/dist
+        name: OpenImageIO-Release-2.2.18.0
+        path: OpenImageIO-Release-2.2.18.0/dist
