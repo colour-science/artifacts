@@ -5,15 +5,15 @@ on: [push]
 jobs:
   build:
 
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
     - uses: actions/checkout@v1
     - name: Environment Variables
       run: |
-         echo "CI_PYTHON_VERSION=3.8" >> $GITHUB_ENV
-         echo "CI_OIIO_VERSION=2.2.18.0" >> $GITHUB_ENV
-         echo "CI_OIIO_PACKAGE=OpenImageIO-Release-2.2.18.0" >> $GITHUB_ENV
+         echo "CI_PYTHON_VERSION=3.10" >> $GITHUB_ENV
+         echo "CI_OIIO_VERSION=2.4.5.0" >> $GITHUB_ENV
+         echo "CI_OIIO_PACKAGE=OpenImageIO-Release-2.4.5.0" >> $GITHUB_ENV
     - name: Update & Install APT Package Dependencies
       run: |
         sudo apt-get update
@@ -29,5 +29,5 @@ jobs:
         make PYTHON_VERSION=$CI_PYTHON_VERSION
     - uses: actions/upload-artifact@master
       with:
-        name: OpenImageIO-Release-2.2.18.0
-        path: OpenImageIO-Release-2.2.18.0/dist
+        name: OpenImageIO-Release-2.4.5.0
+        path: OpenImageIO-Release-2.4.5.0/dist
